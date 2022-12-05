@@ -5,7 +5,8 @@ jobs:
     uses: ./.github/workflows/main.yml
     secrets: inherit
     with:
-      board: '["nice_nano"]'
+      board: '["nice_nano_v2"]'
       shield: '["corne_left","corne_right"]'
-      custom_config: '["#define MIRYOKU_NAV_INVERTEDT"]'
-      kconfig: '["CONFIG_ZMK_SLEEP=y"]'
+      custom_config: '["#define MIRYOKU_NAV_INVERTEDT\n#define MIRYOKU_KLUDGE_MOUSEKEYSPR"]'
+      kconfig: '["CONFIG_ZMK_SLEEP=y\nCONFIG_ZMK_MOUSE=y"]'
+      branches: '["zmkfirmware/zmk/main ftc/zmk/mouse-ftc"]'
